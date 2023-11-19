@@ -8,7 +8,7 @@ import FeedbackRouter from "./api/routers/feedback.router.js";
 dotenv.config();
 
 const server = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000
 server.use(express.json());
 mongoose.connect(process.env.MOONGODB).then(() => {
   console.log(`connected to moongoDB`);
