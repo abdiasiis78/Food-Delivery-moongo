@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import AuthRouter from './api/routers/auth.router.js'
 import FoodRouter from './api/routers/food.router.js'
 import OrderRoute from './api/routers/order.route.js'
+import FeedbackRouter from "./api/routers/feedback.router.js";
 dotenv.config();
 
 const server = express();
@@ -19,6 +20,7 @@ mongoose.connect(process.env.MOONGODB).then(() => {
 server.use("/api/auth", AuthRouter)
 server.use("/api/foodMenu", FoodRouter)
 server.use("/api/order", OrderRoute)
+server.use("/api/feedback", FeedbackRouter)
 
 
 server.use((err , req, res, next )=>{
